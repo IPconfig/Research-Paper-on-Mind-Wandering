@@ -1,0 +1,71 @@
+\RequirePackage[l2tabu, orthodox]{nag} % generates warnings for stuff you shouldn't do
+\documentclass[conference]{IEEEtran}
+
+\usepackage[utf8]{inputenc}
+\usepackage{multirow} % Allows for multiple rows
+\usepackage{multicol} % Allows for multiple columns
+\PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks]{hyperref}	% Breaks URLs down and allows the document to link to sections
+
+% Bibliography preamble
+\usepackage[style=apa,backend=biber,sorting=none]{biblatex}	% APA style biblatex
+\addbibresource{references.bib}		% Path of the library
+
+% Images preamble
+\usepackage{graphicx}				% Import graphics
+% \graphicspath{ {./img/} }	        % Set path to images
+\usepackage{wrapfig}			    % Wrap figure around text
+\usepackage{tikz}				    % Draw shapes
+\usetikzlibrary{positioning,chains} % Libraries used by Tikz
+\usepackage{float}					% Correcting the positioning of images
+\usepackage{adjustbox}				% Wrapper for images
+\usepackage[labelfont=bf]{caption}	% Caption generated text
+\usepackage{subcaption}				% Allow sub captions
+
+
+\title{Automatic Detection of Mind Wandering from Multimodal Datastreams:\\ 
+A Survey of State-of-the-art Methods}
+\author{Murtadha Al Nahadi, Robin Faber, Justin de Haan, Wessel Turk}
+\date{March 2019}
+
+
+\begin{document}
+\maketitle
+\begin{abstract}
+    This document is a model and instructions for \LaTeX.
+    This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
+    or Math in Paper Title or Abstract.
+    \end{abstract}
+    
+    \begin{IEEEkeywords}
+    component, formatting, style, styling, insert
+    \end{IEEEkeywords}
+
+
+\section{Introduction}
+\input{./Introduction}
+
+\section{Definition of Mind Wandering}
+
+\section{Detection of Mind Wandering}
+
+\section{Methodology}
+\input{./Methodology}
+\subsection{Tasks Evaluated}
+
+\subsection{Features Used}
+
+\subsection{Measuring Mind Wandering}
+
+\subsection{Equipment Used}
+
+\section{Results}
+
+\section{Future Challenges}
+
+
+\section{Conclusion}
+
+%\end{multicols}
+\printbibliography
+
+\end{document}

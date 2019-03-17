@@ -1,0 +1,71 @@
+\begin{tikzpicture}[
+    node distance=15mm and 10mm,
+    start chain=going below,
+ mynode/.style = {
+        draw, rectangle, align=center, text width=60mm,
+        font=\large, inner sep=1ex, outer sep=0pt,
+        on chain},
+mylabel/.style = {
+        draw, rectangle, align=center, rounded corners, 
+        font=\small\bfseries, inner sep=2ex, outer sep=0pt,
+        fill=cyan!30, minimum height=35mm,
+        on chain},
+every join/.style = arrow,
+     arrow/.style = {very thick,-stealth}
+                    ] 
+\coordinate (tc);
+% the title
+%\node[above=of tc,font=\bfseries] {PRISMA 2009 Flow Diagram};
+% the nodes at the top
+\node (n1a) [mynode, left=of tc, xshift=7mm]    {Records identified through
+                                        database searching\\
+                                        (N = 129)};
+\node (n1b) [mynode,right=of tc, xshift=-7mm]    {Additional records indentified\\
+                                        through other sources\\
+                                        (N = 10)};
+    % the chain in the center
+\node (n2)  [mynode, below=of tc]   {Records after duplicates removed\\
+                                        (N = 72)};
+\node (n3)  [mynode,join]   {Records screened on title\\
+                                (N = 72)};
+\node (n4)  [mynode,join]   {Records screened on abstract\\
+                                (N = 31)};
+\node (n5)  [mynode,join]   {Full-text accessed for eligibility\\
+                                (N = 23)};
+\node (n6)  [mynode,join]   {Studies included in qualitative synthesis\\
+                                (N = 18)};
+\node (n7)  [mynode,join]   {\# of studies included in quantitative sysntesis\\
+                                (meta-analysis)};
+% the branches to the right
+\node (n3r) [mynode,right=of n3]    {Records excluded:\\
+                                        20: Not related to MW\\
+                                        15: Related to impact of MW\\
+                                        6: Related to attention guidance
+                                        };
+\node (n4r) [mynode,right=of n4]    {Records excluded:\\
+                                    2: Not related MW\\
+                                    4: Related to impact of MW\\
+                                    2: Related to attention guidance
+                                    
+                                        };
+\node (n5r) [mynode,right=of n5]    {Records excluded:\\
+                                        2: Exclusive use of manual detection of MW\\
+                                        2: Overview of the subject\\
+                                        1: No focus on detection of MW};
+% lines not included in join                                        
+\draw[arrow] ([xshift=+22mm] n1a.south) coordinate (a)
+                                       -- (a |- n2.north);
+\draw[arrow] ([xshift=-22mm] n1b.south) coordinate (b)
+                                       -- (b |- n2.north);
+\draw[arrow] (n3) -- (n3r);
+\draw[arrow] (n4) -- (n4r);
+\draw[arrow] (n5) -- (n5r);
+% the labels on the left
+%    \begin{scope}[node distance=5mm]
+%\node[mylabel,below left=-3mm and 5mm of n1a.north west]
+%                {\rotatebox{90}{Identification}};
+%\node[mylabel, minimum height=40mm]  {\rotatebox{90}{Screening}};
+%\node[mylabel]  {\rotatebox{90}{Eligibility}};
+%\node[mylabel]  {\rotatebox{90}{Included}};
+%    \end{scope}
+\end{tikzpicture}
