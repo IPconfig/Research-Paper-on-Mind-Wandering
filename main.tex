@@ -2,8 +2,13 @@
 \documentclass[conference]{IEEEtran}
 
 \usepackage[utf8]{inputenc}
+\usepackage{lipsum}% dummy text
 \usepackage{multirow} % Allows for multiple rows
 \usepackage{multicol} % Allows for multiple columns
+\usepackage{booktabs} % Stylised tables
+\usepackage{tabulary}
+\usepackage{pdflscape} % rotate pages (used for the table) 
+\usepackage{rotating}
 \PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks]{hyperref}	% Breaks URLs down and allows the document to link to sections
 
 % Bibliography preamble
@@ -42,22 +47,14 @@ A Survey of State-of-the-art Methods}
 
 
 \section{Introduction}
-\input{./Introduction}
+\input{./tex/introduction}
 
 \section{Definition of Mind Wandering}
 
 \section{Detection of Mind Wandering}
 
 \section{Methodology}
-\input{./Methodology}
-\subsection{Tasks Evaluated}
-
-\subsection{Features Used}
-
-\subsection{Measuring Mind Wandering}
-
-\subsection{Equipment Used}
-
+\input{./tex/methodology}
 \section{Results}
 
 \section{Future Challenges}
