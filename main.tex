@@ -1,14 +1,17 @@
 \RequirePackage[l2tabu, orthodox]{nag} % generates warnings for stuff you shouldn't do
-\documentclass[conference]{IEEEtran}
+\documentclass[conference, a4paper]{IEEEtran}
 
 \usepackage[utf8]{inputenc}
-\usepackage{lipsum}% dummy text
-\usepackage{multirow} % Allows for multiple rows
-\usepackage{multicol} % Allows for multiple columns
-\usepackage{booktabs} % Stylised tables
-\usepackage{tabulary}
+\usepackage{lipsum} % dummy text
+%\usepackage{multirow} % Allows for multiple rows
+%\usepackage{multicol} % Allows for multiple columns
 \usepackage{pdflscape} % rotate pages (used for the table) 
 \usepackage{rotating}
+
+% Table preamble
+\usepackage{xtab, array, booktabs, ragged2e, pdflscape}
+\usepackage{changepage}
+\usepackage[showframe=true]{geometry}
 \PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks]{hyperref}	% Breaks URLs down and allows the document to link to sections
 
 % Bibliography preamble
@@ -22,14 +25,19 @@
 \usepackage{tikz}				    % Draw shapes
 \usetikzlibrary{positioning,chains} % Libraries used by Tikz
 \usepackage{float}					% Correcting the positioning of images
-\usepackage{adjustbox}				% Wrapper for images
-\usepackage[labelfont=bf]{caption}	% Caption generated text
-\usepackage{subcaption}				% Allow sub captions
+%\usepackage{adjustbox}				% Wrapper for images
+%\usepackage[labelfont=bf]{caption}	% Caption generated text
+%\usepackage{subcaption}				% Allow sub captions
 
 
 \title{Automatic Detection of Mind Wandering from Multimodal Datastreams:\\ 
 A Survey of State-of-the-art Methods}
-\author{Murtadha Al Nahadi, Robin Faber, Justin de Haan, Wessel Turk}
+%\author{Murtadha Al Nahadi, Robin Faber, Justin de Haan, Wessel Turk}
+
+\author{\IEEEauthorblockN{Murtadha Al Nahadi, Robin Faber, Justin de Haan and Wessel Turk}
+\IEEEauthorblockA{Delft University of Technology\\
+Delft, Netherlands\\
+\{M.AlNahadi, R.J.Faber, J.C.deHaan, W.R.A.Turk\}@student.tudelft.nl}}
 \date{March 2019}
 
 
@@ -56,12 +64,13 @@ A Survey of State-of-the-art Methods}
 \section{Methodology}
 \input{./tex/methodology}
 \section{Results}
-\include{./tex/results}
+% \include{./tex/results}
+\include{./table}
 \section{Future Challenges}
 
 
 \section{Conclusion}
-
+\include{./tex/mwe}
 %\end{multicols}
 \printbibliography
 

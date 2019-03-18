@@ -1,27 +1,30 @@
 Data extracted from a total of 18 studies are represented in table \ref{tab:data}
 The table includes the following data for each of the studies:
-%\begin{itemize}
-%    \item Reference to the study
-%    \item The task requested to perform
-%    \item The modalities used to measure mind wandering
-%    \item Features extracted
-%    \item Equipment used
-%    \item How Mind Wandering is reported
-%    \item Which Machine Learning models are used
-%    \item The performance
-%    \item If the dataset has been published
-%    \item Additional Notes
-%\end{itemize}
-\lipsum
+\begin{itemize}
+    \item Reference to the study
+    \item The task requested to perform
+    \item The modalities used to measure mind wandering
+    \item Features extracted
+    \item Equipment used
+    \item How Mind Wandering is reported
+    \item Which Machine Learning models are used
+    \item The performance
+    \item If the dataset has been published
+    \item Additional Notes
+\end{itemize}
+
+\lipsum[5]
 \newpage
 \onecolumn
+
 \begin{sidewaystable} % Landscape page
 \begin{table}[H]
 \centering
 \caption{Extracted data}
 \label{tab:data}
-		\begin{tabulary}{\textheight}{LLLLLLLLLL}
-		\toprule
+\begin{threeparttable}
+\begin{tabulary}{\textheight}{LLLLLLLLLL}
+\toprule
 Reference & Task & Modalities used & Features extracted & Equipment used & Reporting MW & ML model(s) & Performance & Published dataset (y/n) & Notes \\
 		\midrule
 \cite{Bixler2015AutomaticPhysiology}   &  Reading 	& Eye gaze, physiology, contextual cues & GGF (46), LGF(23), SC (43), ST (43), CF (11)  & Eye tracker   & WP, EP  &  Thirteen supervised ML algorithms from Weka        & Kappa of 0.19 & n & -\\
@@ -43,9 +46,11 @@ Reference & Task & Modalities used & Features extracted & Equipment used & Repor
 \cite{ISI:000443429900018}              & Watching a teaching video on a mobile device & Eye gaze, pupillometry & Eye movement, pupil index & Camera of mobile device & Participants review imaged afterwards & Logistic regression, SVM, HMM & Accuracy of 53\% & n & SVM classifier works best\\
 \cite{Zhao2017ScalableApproach}         & Watching a video on a computer screen & Eye gaze & GGF, LGF, 58 in total & Low-end webcams & SCR & Logistic Regression, Linear SVM, Naive Bayes & F1 score of 0.40 & n & Naive Bayes net works best\\
 \bottomrule
-		\end{tabulary}
-%	}
-
+\end{tabulary}
+\begin{tablenotes}\footnotesize
+    \note This is a long explanation going over multiple lines. This is a long explanation going over multiple lines. This is a long explanation going over multiple lines. This is a long explanation going over multiple lines. This is a long explanation going over multiple lines.
+\end{tablenotes}
+\end{threeparttable}
 \end{table}
 \end{sidewaystable}
 \twocolumn
