@@ -1,5 +1,7 @@
 \onecolumn
 \newpage
+\newgeometry{left=2.4cm,bottom=1.0cm, top=1.0cm}
+
 % header and footer information
 \topcaption{Detection methods for mind wandering} 
 \label{tab:data}
@@ -17,8 +19,7 @@
 \tabletail{\hline\multicolumn{2}{r}{{Continued on next page}} \\ \hline}
 %\xentrystretch{0.10} 
 \begin{landscape}
-        \begin{adjustwidth}{-2cm}{}
-\begin{xtabular}{p{18mm}p{22mm}p{26mm}p{18mm}p{24mm}p{18mm}p{2cm}p{2cm}p{15mm}p{2cm}}
+\begin{xtabular}{p{25mm}p{25mm}p{30mm}p{18mm}p{32mm}p{22mm}p{2cm}p{2cm}p{15mm}p{32cm}}
   \toprule
   Reference & Task & Modalities used & Features extracted & Equipment used & Reporting MW & ML model(s) & Performance & Published dataset (y/n) & Notes \\
   \midrule
@@ -43,4 +44,5 @@
   \bottomrule
 \end{xtabular}
 \end{landscape}
+\restoregeometry
 \twocolumn
