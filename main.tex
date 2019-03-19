@@ -7,11 +7,13 @@
 %\usepackage{multicol} % Allows for multiple columns
 \usepackage{pdflscape} % rotate pages (used for the table) 
 \usepackage{rotating}
+\PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks]{hyperref}	% Breaks URLs down and allows the document to link to sections
+
 
 % Table preamble
 \usepackage{xtab, array, booktabs, ragged2e, pdflscape}
-\usepackage[showframe=true]{geometry}
-\PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks]{hyperref}	% Breaks URLs down and allows the document to link to sections
+\usepackage{geometry}
+\usepackage{threeparttablex}
 
 % Bibliography preamble
 \usepackage[style=apa,backend=biber,sorting=none]{biblatex}	% APA style biblatex

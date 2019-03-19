@@ -1,25 +1,23 @@
-\onecolumn
-\newpage
-\newgeometry{left=2.4cm,bottom=1.0cm, top=1.0cm}
+\onecolumn % use the full width of the page
+\newgeometry{left=1.0cm,right=1.0cm,bottom=0.0cm, top=0.0cm} % bottom/top will be left/right margin when in landscape
 
 % header and footer information
-\topcaption{Detection methods for mind wandering} 
-\label{tab:data}
+\topcaption{Detection methods for mind wandering} \label{tab:data}
 \tablefirsthead{\toprule}
 % the contents of the tabular head. 
 \tablehead{\multicolumn{2}{l}{Table \ref{tab:data}}{continued from previous page}\\
         \toprule
-        Reference & Task & Modalities used & Features extracted & Equipment used & Reporting MW & ML model(s) & Performance & Published dataset (y/n) & Notes \\
+        Reference & Task & Modalities used & Features Extracted & Equipment Used & Reporting MW & ML model(s) & Performance & Published Dataset (Y/N) & Notes \\
         \midrule}
 
 \tablelasthead{\multicolumn{2}{l}{Table \ref{tab:data}} concluded from previous page\\
         \toprule
-        Reference & Task & Modalities used & Features extracted & Equipment used & Reporting MW & ML model(s) & Performance & Published dataset (y/n) & Notes \\
+        Reference & Task & Modalities used & Features Extracted \footnotemark[1] & Equipment Used & Reporting MW \footnotemark[2] & ML model(s) & Performance & Published Dataset (Y/N) & Notes \\
         \midrule}
-\tabletail{\hline\multicolumn{2}{r}{{Continued on next page}} \\ \hline}
+\tabletail{\hline\multicolumn{10}{r}{{Continued on next page}} \\ \hline}
 %\xentrystretch{0.10} 
-\begin{landscape}
-\begin{xtabular}{p{25mm}p{25mm}p{30mm}p{18mm}p{32mm}p{22mm}p{2cm}p{2cm}p{15mm}p{32cm}}
+\begin{landscape} % turn the page-layout to landscape
+\begin{xtabular}{p{25mm}p{28mm}p{30mm}p{22mm}p{38mm}p{22mm}p{23mm}p{22mm}p{15mm}p{3cm}}
   \toprule
   Reference & Task & Modalities used & Features extracted & Equipment used & Reporting MW & ML model(s) & Performance & Published dataset (y/n) & Notes \\
   \midrule
@@ -43,6 +41,13 @@
 \cite{Zhao2017ScalableApproach} & Watching a video on a computer screen & Eye gaze & GGF, LGF, 58 in total & Low-end webcams & SCR & Logistic Regression, Linear SVM, Naive Bayes & F1 score of 0.40 & N & Naive Bayes net works best\\ \midrule
 \bottomrule
 \end{xtabular}
+\begin{ThreePartTable}
+        \begin{tablenotes}
+        \small
+        \item[1] \emph{Features extracted:} GGF = global gaze features, LGF = local gaze features, SC = skin conductance, ST = skin temperature, CF = context features
+        \item[2] \emph{Reporting MW:} WP = Within-page probes, EP = End-of-page probes, AP = Auditory probes, SCR = self-caught reports
+        \end{tablenotes}
+\end{ThreePartTable}
 \end{landscape}
-\restoregeometry
-\twocolumn
+\restoregeometry % restore normal page margins
+\twocolumn       % set document to two columns again
