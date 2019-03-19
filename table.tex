@@ -1,25 +1,34 @@
 \onecolumn % use the full width of the page
-\newgeometry{left=1.0cm,right=1.0cm,bottom=0.0cm, top=0.0cm} % bottom/top will be left/right margin when in landscape
+\newgeometry{left=2.4cm,right=.9cm,bottom=0.0cm, top=0.0cm} % bottom/top will be left/right margin when in landscape
 
 % header and footer information
 \topcaption{Detection methods for mind wandering} \label{tab:data}
 \tablefirsthead{\toprule}
-% the contents of the tabular head. 
-\tablehead{\multicolumn{2}{l}{Table \ref{tab:data}}{continued from previous page}\\
-        \toprule
-        Reference & Task & Modalities used & Features Extracted & Equipment Used & Reporting MW & ML model(s) & Performance & Published Dataset (Y/N) & Notes \\
-        \midrule}
 
+% the contents of each repeating tabular head. 
+%\tablehead{\multicolumn{2}{l}{Table \ref{tab:data}}{continued from previous page}\\
+%        \toprule
+%        Reference & Task & Modalities used & Features Extracted & Equipment Used & Reporting MW & ML model(s) & Performance & Published Dataset (Y/N) & Notes \\
+%        \midrule}
+
+% Tabular head of last page of the table 
 \tablelasthead{\multicolumn{2}{l}{Table \ref{tab:data}} concluded from previous page\\
         \toprule
         Reference & Task & Modalities used & Features Extracted \footnotemark[1] & Equipment Used & Reporting MW \footnotemark[2] & ML model(s) & Performance & Published Dataset (Y/N) & Notes \\
         \midrule}
+
+% Tail of each repeating table (except last page)
 \tabletail{\hline\multicolumn{10}{r}{{Continued on next page}} \\ \hline}
+
 %\xentrystretch{0.10} 
+
 \begin{landscape} % turn the page-layout to landscape
+
+% Table data
 \begin{xtabular}{p{25mm}p{28mm}p{30mm}p{22mm}p{38mm}p{22mm}p{23mm}p{22mm}p{15mm}p{3cm}}
   \toprule
-  Reference & Task & Modalities used & Features extracted & Equipment used & Reporting MW & ML model(s) & Performance & Published dataset (y/n) & Notes \\
+  Reference & Task & Modalities used & Features Extracted \footnotemark[1] & Equipment Used & Reporting MW \footnotemark[2] & ML model(s) & Performance & Published Dataset (Y/N) & Notes \\
+  \midrule
   \midrule
 \cite{Bixler2015AutomaticPhysiology} & Reading & Eye gaze, physiology, contextual cues & GGF (46), LGF(23), SC (43), ST (43), CF (11) & Eye tracker & WP, EP & Thirteen supervised ML algorithms from Weka & Kappa of 0.19 & N & -\\ \midrule 
 \cite{Bixler2015AutomaticAwareness} & Reading & Eye gaze & GGF (46), LGF (20) & Eye tracker & Pseudo-random AP, SCR & Ten classifiers implemented in Weka & Kappa of 0.45 & N & Context features were tested, but did not improve classification\\ \midrule 
@@ -37,10 +46,12 @@
 \cite{Russell2016MonitoringEnvironments} & Watching flickers on a computer screen & Electroence\-phalographic brain activity & ssVEP powers & Electroence\-phalogram & N/A & N/A & N/S & N & An indication that high frequency ssVEPs are attention sensitive is given, due to unexpected results further research is needed\\ \midrule 
 \cite{Stewart2017FaceComprehension} & Watching a film on a computer screen & Facial features and body movement & Facial features (75), body movement features (3) & Webcam, FACET vision software & SCR & Supervised classification techniques & F1 score of 0.39 & N & -\\ \midrule 
 \cite{Stewart2016WheresViewing} & Watching a film on a computer screen & Facial features and body movement & Facial features (75), body movement features (3) & Webcam, FACET vision software & SCR & Supervised classification techniques & SVM classifier, F1 score of 0.30 & N & SVM classifier works best\\ \midrule 
-\cite{ISI:000443429900018} & Watching a teaching video on a mobile device & Eye gaze, pupillometry & Eye movement, pupil index & Camera of mobile device & Participants review imaged afterwards & Logistic regression, SVM, HMM & Accuracy of 53\% & N & SVM classifier works best\\ \midrule 
+\cite{ISI:000443429900018} & Watching a teaching video on a mobile device & Eye gaze, pupillometry & Eye movement, pupil index & Camera of mobile device & Participants review images afterwards & Logistic regression, SVM, HMM & Accuracy of 53\% & N & SVM classifier works best\\ \midrule 
 \cite{Zhao2017ScalableApproach} & Watching a video on a computer screen & Eye gaze & GGF, LGF, 58 in total & Low-end webcams & SCR & Logistic Regression, Linear SVM, Naive Bayes & F1 score of 0.40 & N & Naive Bayes net works best\\ \midrule
 \bottomrule
-\end{xtabular}
+\end{xtabular} % Close long table
+
+% Add footnotes
 \begin{ThreePartTable}
         \begin{tablenotes}
         \small
@@ -48,6 +59,6 @@
         \item[2] \emph{Reporting MW:} WP = Within-page probes, EP = End-of-page probes, AP = Auditory probes, SCR = self-caught reports
         \end{tablenotes}
 \end{ThreePartTable}
-\end{landscape}
+\end{landscape}  % Stop rotating pages to landscape
 \restoregeometry % restore normal page margins
 \twocolumn       % set document to two columns again
