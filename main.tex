@@ -8,15 +8,28 @@
 \usepackage{pdflscape} % rotate pages (used for the table) 
 \usepackage{rotating}
 \PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks]{hyperref}	% Breaks URLs down and allows the document to link to sections
+\usepackage{etoolbox}
 
 
 % Table preamble
-\usepackage{xtab, array, booktabs, ragged2e, pdflscape}
+\usepackage{xtab, array, booktabs, ragged2e, lscape}
 \usepackage{geometry}
 \usepackage{threeparttablex}
+\usepackage{lipsum}
+
+\makeatletter
+\def\ifGm@preamble#1{\@firstofone}
+\appto\restoregeometry{%
+  \pdfpagewidth=\paperwidth
+  \pdfpageheight=\paperheight}
+\apptocmd\newgeometry{%
+  \pdfpagewidth=\paperwidth
+  \pdfpageheight=\paperheight}{}{}
+\makeatother
+
 
 % Bibliography preamble
-\usepackage[style=apa,backend=biber,sorting=none]{biblatex}	% APA style biblatex
+\usepackage[style=ieee,backend=biber,sorting=none]{biblatex}	% APA style biblatex
 \addbibresource{references.bib}		% Path of the library
 
 % Images preamble
@@ -71,7 +84,6 @@ Delft, Netherlands\\
 
 
 \section{Conclusion}
-\include{./tex/mwe}
 %\end{multicols}
 \printbibliography
 

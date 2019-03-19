@@ -1,33 +1,28 @@
+\newgeometry{,hmargin=0.1cm,vmargin=0.9cm,landscape}
 \onecolumn % use the full width of the page
-\newgeometry{left=2.4cm,right=.9cm,bottom=0.0cm, top=0.0cm} % bottom/top will be left/right margin when in landscape
 
 % header and footer information
 \topcaption{Detection methods for mind wandering} \label{tab:data}
 \tablefirsthead{\toprule}
 
 % the contents of each repeating tabular head. 
-%\tablehead{\multicolumn{2}{l}{Table \ref{tab:data}}{continued from previous page}\\
-%        \toprule
-%        Reference & Task & Modalities used & Features Extracted & Equipment Used & Reporting MW & ML model(s) & Performance & Published Dataset (Y/N) & Notes \\
-%        \midrule}
+\tablehead{\multicolumn{2}{l}{Table \ref{tab:data}}{continued from previous page}\\
+        \toprule
+        Reference & Task & Modalities used & Features Extracted \footnotemark[1] & Equipment Used & Reporting MW \footnotemark[2] & ML model(s) & Performance & Notes\\
+        \midrule}
 
 % Tabular head of last page of the table 
 \tablelasthead{\multicolumn{2}{l}{Table \ref{tab:data}} concluded from previous page\\
         \toprule
-        Reference & Task & Modalities used & Features Extracted \footnotemark[1] & Equipment Used & Reporting MW \footnotemark[2] & ML model(s) & Performance & Published Dataset (Y/N) & Notes \\
+        Reference & Task & Modalities used & Features Extracted \footnotemark[1] & Equipment Used & Reporting MW \footnotemark[2] & ML model(s) & Performance & Notes\\
         \midrule}
+\tabletail{\hline\multicolumn{9}{r}{{Continued on next page}} \\ \bottomrule}
 
-% Tail of each repeating table (except last page)
-\tabletail{\hline\multicolumn{10}{r}{{Continued on next page}} \\ \hline}
-
-%\xentrystretch{0.10} 
-
-\begin{landscape} % turn the page-layout to landscape
-
-% Table data
-\begin{xtabular}{p{25mm}p{28mm}p{30mm}p{22mm}p{38mm}p{22mm}p{23mm}p{22mm}p{15mm}p{3cm}}
+% Start of Table
+\begin{xtabular}{p{25mm}p{30mm}p{30mm}p{22mm}p{38mm}p{22mm}p{33mm}p{22mm}p{35mm}}
   \toprule
-  Reference & Task & Modalities used & Features Extracted \footnotemark[1] & Equipment Used & Reporting MW \footnotemark[2] & ML model(s) & Performance & Published Dataset (Y/N) & Notes \\
+        Reference & Task & Modalities used & Features Extracted \footnotemark[1] & Equipment Used & Reporting MW \footnotemark[2] & ML model(s) & Performance & Notes\\
+  \midrule
   \midrule
   \midrule
 \cite{Bixler2015AutomaticPhysiology} & Reading & Eye gaze, physiology, contextual cues & GGF (46), LGF(23), SC (43), ST (43), CF (11) & Eye tracker & WP, EP & Thirteen supervised ML algorithms from Weka & Kappa of 0.19 & N & -\\ \midrule 
@@ -49,9 +44,8 @@
 \cite{ISI:000443429900018} & Watching a teaching video on a mobile device & Eye gaze, pupillometry & Eye movement, pupil index & Camera of mobile device & Participants review images afterwards & Logistic regression, SVM, HMM & Accuracy of 53\% & N & SVM classifier works best\\ \midrule 
 \cite{Zhao2017ScalableApproach} & Watching a video on a computer screen & Eye gaze & GGF, LGF, 58 in total & Low-end webcams & SCR & Logistic Regression, Linear SVM, Naive Bayes & F1 score of 0.40 & N & Naive Bayes net works best\\ \midrule
 \bottomrule
-\end{xtabular} % Close long table
-
-% Add footnotes
+\end{xtabular}
+% Add Footnotes
 \begin{ThreePartTable}
         \begin{tablenotes}
         \small
@@ -59,6 +53,5 @@
         \item[2] \emph{Reporting MW:} WP = Within-page probes, EP = End-of-page probes, AP = Auditory probes, SCR = self-caught reports
         \end{tablenotes}
 \end{ThreePartTable}
-\end{landscape}  % Stop rotating pages to landscape
 \restoregeometry % restore normal page margins
 \twocolumn       % set document to two columns again
