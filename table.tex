@@ -1,6 +1,14 @@
 \newgeometry{,hmargin=0.1cm,vmargin=0.9cm,landscape}
 \onecolumn % use the full width of the page
 
+%define your footnote marks
+\newcommand{\myfnmark}[1]{\mbox{\textsuperscript{\normalfont #1}}}
+%redefine the way the footnotes are shown, to use your footnote marks
+\makeatletter
+\renewcommand\@makefntext[1]%
+   {\noindent\makebox[1.8em][r]{\myfnmark}#1} 
+\makeatother
+
 % header and footer information
 \topcaption{Detection methods for mind wandering} \label{tab:data}
 \tablefirsthead{\toprule}
@@ -19,29 +27,29 @@
 \tabletail{\hline\multicolumn{9}{r}{{Continued on next page}} \\ \bottomrule}
 
 % Start of Table
-\begin{xtabular}{p{25mm}p{30mm}p{30mm}p{22mm}p{38mm}p{22mm}p{33mm}p{22mm}p{35mm}}
+\begin{mpxtabular}{p{25mm}p{30mm}p{30mm}p{22mm}p{38mm}p{22mm}p{33mm}p{22mm}p{35mm}}
   \toprule
         Reference & Task & Modalities used & Features Extracted \footnotemark[1] & Equipment Used & Reporting MW \footnotemark[2] & ML model(s) & Performance & Notes\\
   \midrule
-  Bixler et al. \cite{Bixler2015AutomaticPhysiology} & Reading & Eye gaze, physiology, contextual cues & GGF (46), LGF (23), SC (43), ST (43), CF (11)  & Eye tracker & WP, EP & 13 supervised ML classifiers in Weka & Kappa = 0.19 & N/A \\
-  \midrule
-  Bixler et al. \cite{Bixler2015AutomaticAwareness} & Reading & Eye gaze & GGF (46), LGF (20) & Eye tracker & Pseudo-random AP, SCR & 10 ML classifiers in Weka & Kappa = 0.45 & Context features were tested but did not improve classification\\
-  \midrule
-  Bixler et al. \cite{Bixler2016AutomaticReading} & Reading & Eye gaze, contextual cues & GGF (46), LGF (23), CF (11) & Eye tracker & WP, EP & 20 supervised ML classifiers in Weka & Kappa = 0.31 & N/A \\
-  \midrule
-  Bixler et al. \cite{Bixler2014TowardWandering} & Reading & Eye gaze, contextual cues & GGF (30), LGF (19), CF(12) & Eye tracker & WP, EP & 20 supervised ML classifiers in Weka & Kappa = 0.28 (end-of-page), Kappa = 0.17 (within-page) & N/A \\
-  \midrule
-  Blanchard et al. \cite{Blanchard2014AutomatedLearning} & Reading & Physiology & SC (43), ST (43), CF (11) & Wearable sensor & WP, EP & Supervised classifiers in Weka & Kappa = 0.22 & N/A \\
-  \midrule
-  Cheetham et al. \cite{Cheetham2016AutomatedApplication} & Eyes-closed FA meditation & Respiration, heart rate, electrocardiogram, electromyogram, electrodermal acitivity & N/S & Biosensors & SCR & N/S & Accuracy = 85\% & performance achieved for area under the receiver operator characteristic curve\\
-  \midrule
-  Da Silva et al. \cite{DaSilva2018WanderingWandering} & Maintain access to memory items (letters) while completing math equations & Mouse movements & Time to press start, initiation time, total distance, average speed, speed errors & Regular computer & Probes after each set & Mixed effects logistic regression & N/S & Provides initial evidence that mouse tracking can be used to predict MW\\
-  \midrule
-  Gontier \cite{Gontier2016HowEnvironment} & Various extra-vehicular activities at the Mars Desert Research Station & Heart rate & Measures of heart rate variability & ECG sensor & AP & N/A & N/A & N/A \\
-  \midrule
-  Gwizdka \cite{Gwizdka2019ExploringTasks} & Reading & Eye gaze & 27 eye gaze features & Eye tracker & WP & ML classifiers in Weka 3.8 & Accuracy of 73-89\% & Accuracy might not be reliable due to resampling \\
-  \midrule
-  \cite{Hutt2017OutClassroom} & Interacting with learning technology & Eye gaze & GGF (57, LGF (81), CF (8) & Eye tracker (commercial off the shelf) & Pseudo-random AP & Bayesian Networks in Weka & Total accuracy of 57 & -\\ \midrule
+Bixler et al. \cite{Bixler2015AutomaticPhysiology} & Reading & Eye gaze, physiology, contextual cues & GGF (46), LGF (23), SC (43), ST (43), CF (11)  & Eye tracker & WP, EP & 13 supervised ML classifiers in Weka & Kappa = 0.19 & N/A \\
+\midrule
+Bixler et al. \cite{Bixler2015AutomaticAwareness} & Reading & Eye gaze & GGF (46), LGF (20) & Eye tracker & Pseudo-random AP, SCR & 10 ML classifiers in Weka & Kappa = 0.45 & Context features were tested but did not improve classification\\
+\midrule
+Bixler et al. \cite{Bixler2016AutomaticReading} & Reading & Eye gaze, contextual cues & GGF (46), LGF (23), CF (11) & Eye tracker & WP, EP & 20 supervised ML classifiers in Weka & Kappa = 0.31 & N/A \\
+\midrule
+Bixler et al. \cite{Bixler2014TowardWandering} & Reading & Eye gaze, contextual cues & GGF (30), LGF (19), CF(12) & Eye tracker & WP, EP & 20 supervised ML classifiers in Weka & Kappa = 0.28 (end-of-page), Kappa = 0.17 (within-page) & N/A \\
+\midrule
+Blanchard et al. \cite{Blanchard2014AutomatedLearning} & Reading & Physiology & SC (43), ST (43), CF (11) & Wearable sensor & WP, EP & Supervised classifiers in Weka & Kappa = 0.22 & N/A \\
+\midrule
+Cheetham et al. \cite{Cheetham2016AutomatedApplication} & Eyes-closed FA meditation & Respiration, heart rate, electrocardiogram, electromyogram, electrodermal acitivity & N/S & Biosensors & SCR & N/S & Accuracy = 85\% & performance achieved for area under the receiver operator characteristic curve\\
+\midrule
+Da Silva et al. \cite{DaSilva2018WanderingWandering} & Maintain access to memory items (letters) while completing math equations & Mouse movements & Time to press start, initiation time, total distance, average speed, speed errors & Regular computer & Probes after each set & Mixed effects logistic regression & N/S & Provides initial evidence that mouse tracking can be used to predict MW\\
+\midrule
+Gontier \cite{Gontier2016HowEnvironment} & Various extra-vehicular activities at the Mars Desert Research Station & Heart rate & Measures of heart rate variability & ECG sensor & AP & N/A & N/A & N/A \\
+\midrule
+Gwizdka \cite{Gwizdka2019ExploringTasks} & Reading & Eye gaze & 27 eye gaze features & Eye tracker & WP & ML classifiers in Weka 3.8 & Accuracy of 73-89\% & Accuracy might not be reliable due to resampling \\
+\midrule
+\cite{Hutt2017OutClassroom} & Interacting with learning technology & Eye gaze & GGF (57, LGF (81), CF (8) & Eye tracker (commercial off the shelf) & Pseudo-random AP & Bayesian Networks in Weka & Total accuracy of 57 & -\\ \midrule
 \cite{Jo2017AMind} & Watching a video lecture & Words in video & High frequency words & N/A & Not watching a video is compared with watching & N/A & N/a & Provides initial evidence that MW can be detected using high frequency words in video lectures\\ \midrule
 \cite{Mishchenko2015DetectingTespiti} & Controlling a passenger train using the computer simulator program "Microsoft Train Simulator" & Electroencephalo\-graphic brain activity & Feature vector containing 252 EEG spectral power values & Modified EPOC EEG device & AP & A system consisting of several SVM classifiers & Accuracy of 90\% & Obtained after the model was trained \\ \midrule
 \cite{Pham2015Attentivelearner:Tracking} & Watching a video lecture & Heart rate and fingertip transparency & Heart rate features (12) and CF (7) & Tangible video control channel, an implicit heart rate sensing module, an on-screen AttentiveWidget visualizing real-time states of video control and heart rate sensing & AP & Supervised ML algorithms from Weka & kappa of 0.22 & -\\ \midrule
@@ -51,14 +59,26 @@
 \cite{ISI:000443429900018} & Watching a teaching video on a mobile device & Eye gaze, pupillometry & Eye movement, pupil index & Camera of mobile device & Participants review images afterwards & Logistic regression, SVM, HMM & Accuracy of 53\% & SVM classifier works best\\ \midrule
 \cite{Zhao2017ScalableApproach} & Watching a video on a computer screen & Eye gaze & GGF, LGF, 58 in total & Low-end webcams & SCR & Logistic Regression, Linear SVM, Naive Bayes & F1 score of 0.40 & Naive Bayes net works best\\ \midrule
 \bottomrule
-\end{xtabular}
+%\footnotetext[1]{\emph{Features extracted:} GGF = global gaze features, LGF = local gaze features, SC = skin conductance, ST = skin temperature, CF = context features}
+%\footnotetext[2]{\emph{Reporting MW:} WP = Within-page probes, EP = End-of-page probes, AP = Auditory probes, SCR = self-caught reports}
+\end{mpxtabular}
+% Footnote text
+\begin{minipage}{.5\linewidth}
+        %do not draw the footnoterule
+        \renewcommand{\footnoterule}{}
+        \footnotetext[1]{\myfnmark{$\ast$} First footnote on the caption}
+        \footnotetext[2]{\myfnmark{$\dagger$} Second footnote on the heading}
+   %     \footnotetext[3]{\myfnmark{$\ddagger$} Third footnote inside table's body}
+        \end{minipage}
 % Add Footnotes
-\begin{ThreePartTable}
-        \begin{tablenotes}
-        \small
-        \item[1] \emph{Features extracted:} GGF = global gaze features, LGF = local gaze features, SC = skin conductance, ST = skin temperature, CF = context features
-        \item[2] \emph{Reporting MW:} WP = Within-page probes, EP = End-of-page probes, AP = Auditory probes, SCR = self-caught reports
-        \end{tablenotes}
-\end{ThreePartTable}
+
+%\begin{ThreePartTable}
+%        \begin{tablenotes}
+%        \small
+%        \item[1] \emph{Features extracted:} GGF = global gaze features, LGF = local gaze features, SC = skin conductance, ST = skin temperature, CF = context features
+%        \item[2] \emph{Reporting MW:} WP = Within-page probes, EP = End-of-page probes, AP = Auditory probes, SCR = self-caught reports
+%        \end{tablenotes}
+%\end{ThreePartTable}
+
 \restoregeometry % restore normal page margins
 \twocolumn       % set document to two columns again
