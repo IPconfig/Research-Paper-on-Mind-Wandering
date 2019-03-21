@@ -1,22 +1,31 @@
-\RequirePackage[l2tabu, orthodox]{nag} % generates warnings for stuff you shouldn't do
+% \documentclass[10pt]{article}
 \documentclass[conference, a4paper]{IEEEtran}
-
+\usepackage[british]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{lipsum} % dummy text
+\usepackage{csquotes} % needed for babel
+\usepackage{etoolbox} % alter default commands
 %\usepackage{multirow} % Allows for multiple rows
 %\usepackage{multicol} % Allows for multiple columns
-\usepackage{pdflscape} % rotate pages (used for the table) 
+%\usepackage[dvips,letterpaper,margin=1.5cm,bottom=2.5cm,top=2.5cm]{geometry}
+\usepackage{url}
+\bibliographystyle{IEEEtran.bst}
 \usepackage{rotating}
-\PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks]{hyperref}	% Breaks URLs down and allows the document to link to sections
-\usepackage{etoolbox}
+\usepackage{makecell}
+\usepackage{adjustbox}
+\usepackage{tabularx}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
 
+% Images preamble
+\usepackage{graphicx}% Import graphics
+\usepackage{wrapfig} % Wrap figure around text
+\usepackage{tikz} % Draw shapes
+\usetikzlibrary{positioning,chains}
+\usepackage{float}% Correcting the positioning of images
 
 % Table preamble
-\usepackage{xtab, array, booktabs, ragged2e, lscape}
 \usepackage{geometry}
-\usepackage{threeparttablex}
-\usepackage{lipsum}
-
+\usepackage{xtab, array, booktabs, caption, ragged2e, lscape, threeparttablex}
 \makeatletter
 \def\ifGm@preamble#1{\@firstofone}
 \appto\restoregeometry{%
@@ -27,64 +36,60 @@
   \pdfpageheight=\paperheight}{}{}
 \makeatother
 
-
-% Bibliography preamble
-\usepackage[style=ieee,backend=biber,sorting=none]{biblatex}	% APA style biblatex
-\addbibresource{references.bib}		% Path of the library
-
-% Images preamble
-\usepackage{graphicx}				% Import graphics
-% \graphicspath{ {./img/} }	        % Set path to images
-\usepackage{wrapfig}			    % Wrap figure around text
-\usepackage{tikz}				    % Draw shapes
-\usetikzlibrary{positioning,chains} % Libraries used by Tikz
-\usepackage{float}					% Correcting the positioning of images
-%\usepackage{adjustbox}				% Wrapper for images
-%\usepackage[labelfont=bf]{caption}	% Caption generated text
-%\usepackage{subcaption}				% Allow sub captions
-
-
-\title{Automatic Detection of Mind Wandering from Multimodal Datastreams:\\ 
-A Survey of State-of-the-art Methods}
-%\author{Murtadha Al Nahadi, Robin Faber, Justin de Haan, Wessel Turk}
-
-\author{\IEEEauthorblockN{Murtadha Al Nahadi, Robin Faber, Justin de Haan and Wessel Turk}
+\title{Automatic Detection of Mind Wandering from Multimodal Datastreams: A Survey of State-of-the-art Methods}
+\author{\IEEEauthorblockN{Murtadha Al Nahadi, Robin Faber, Justin de Haan, Wessel Turk}
 \IEEEauthorblockA{Delft University of Technology\\
 Delft, Netherlands\\
 \{M.AlNahadi, R.J.Faber, J.C.deHaan, W.R.A.Turk\}@student.tudelft.nl}}
 \date{March 2019}
 
-
 \begin{document}
 \maketitle
+
 \begin{abstract}
-    This document is a model and instructions for \LaTeX.
-    This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-    or Math in Paper Title or Abstract.
-    \end{abstract}
+    \input{tex/abstract.tex}
+\end{abstract}
     
-    \begin{IEEEkeywords}
-    component, formatting, style, styling, insert
-    \end{IEEEkeywords}
+\begin{IEEEkeywords}
+    Mind wandering, literature review, machine learning, automatic detection, attentional state estimation. 
+\end{IEEEkeywords}
 
 
 \section{Introduction}
-\input{./tex/introduction}
+\input{tex/introduction.tex} 
 
-\section{Definition of Mind Wandering}
-
-\section{Detection of Mind Wandering}
-
-\section{Methodology}
+\section{Method}
 \input{./tex/methodology}
-\section{Results}
-% \include{./tex/results}
-\include{./table}
-\section{Future Challenges}
 
+\section{Results}
+A total of 18 studies were included in our review, a summary of the studies is shown in Table \ref{tab:data}. For each study the following was defined: the task people had to perform, the modalities used, the extracted features, used equipment, how people reported MW, used machine learning (ML) algorithms and the performance of the developed classifier. In the following sections, the contents and relevance of the columns from Table \ref{tab:data} will be discussed.
+
+\input{./img/table}
+
+\subsection{Performed tasks} \label{sec:tasks}
+\input{tex/tasks.tex}
+
+
+\subsection{Modalities recorded and features extracted} \label{sec:modal}
+\input{tex/modalities.tex}
+
+\subsection{Equipment used} \label{sec:equipment}
+\input{tex/equipment.tex}
+
+\subsection{Reporting MW} \label{sec:reporting}
+\input{tex/reporting.tex}
+
+\subsection{Performance of various ML algorithms} \label{sec:performance}
+\input{tex/performance.tex}
+
+\subsection{Published datasets}
+\input{tex/datasets.tex}
 
 \section{Conclusion}
-%\end{multicols}
-\printbibliography
+
+\bibliography{references,references2}
+%\end{multicols*}
+
+
 
 \end{document}
