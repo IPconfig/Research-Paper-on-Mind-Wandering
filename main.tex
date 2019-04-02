@@ -1,12 +1,8 @@
-% \documentclass[10pt]{article}
 \documentclass[conference, a4paper]{IEEEtran}
 \usepackage[british]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes} % needed for babel
-\usepackage{etoolbox} % alter default commands
-%\usepackage{multirow} % Allows for multiple rows
-%\usepackage{multicol} % Allows for multiple columns
-%\usepackage[dvips,letterpaper,margin=1.5cm,bottom=2.5cm,top=2.5cm]{geometry}
+\usepackage{etoolbox} % rewrite default commands 
 \usepackage{url}
 \bibliographystyle{IEEEtran.bst}
 \usepackage{rotating}
@@ -21,16 +17,13 @@
 \usepackage{wrapfig} % Wrap figure around text
 \usepackage{tikz} % Draw shapes
 \usetikzlibrary{positioning,chains}
-\usepackage{float}% Correcting the positioning of images
+\usepackage{float} % Correct the positioning of images
 
 % Table preamble
 \usepackage{geometry}
-\usepackage{tabulary}
-\usepackage{placeins}
-% allows for temporary adjustment of side margins
-\usepackage{chngpage}
-\usepackage{rotating}
+\usepackage{changepage} % allows for temporary adjustment of side margins
 \usepackage{xtab, array, booktabs, caption, ragged2e, lscape, threeparttablex}
+% Redefine geometry commands
 \makeatletter
 \def\ifGm@preamble#1{\@firstofone}
 \appto\restoregeometry{%
@@ -40,6 +33,8 @@
   \pdfpagewidth=\paperwidth
   \pdfpageheight=\paperheight}{}{}
 \makeatother
+% Create new column type P (used in results table)
+\newcolumntype{P}[1]{>{\RaggedRight\hspace{0pt}}p{#1}}
 
 \title{Automatic Detection of Mind Wandering from Multimodal Datastreams: A Survey of State-of-the-art Methods}
 \author{\IEEEauthorblockN{Murtadha Al Nahadi, Robin Faber, Justin de Haan, Wessel Turk}
@@ -68,8 +63,7 @@ Delft, Netherlands\\
 
 \section{Results \& Discussion}
 A total of 18 studies were included in our review, a summary of the studies is shown in Table \ref{tab:data}. For each study the following was defined: the task people had to perform, the modalities used, the extracted features, used equipment, how people reported MW, used machine learning (ML) algorithms and the performance of the developed classifier. In the following sections, the contents and relevance of the columns from Table \ref{tab:data} will be discussed.
-
-\input{./img/table}
+\input{./img/table.tex}
 
 \subsection{Performed tasks} \label{sec:tasks}
 \input{tex/tasks.tex}
