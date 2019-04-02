@@ -25,6 +25,11 @@
 
 % Table preamble
 \usepackage{geometry}
+\usepackage{tabulary}
+\usepackage{placeins}
+% allows for temporary adjustment of side margins
+\usepackage{chngpage}
+\usepackage{rotating}
 \usepackage{xtab, array, booktabs, caption, ragged2e, lscape, threeparttablex}
 \makeatletter
 \def\ifGm@preamble#1{\@firstofone}
@@ -89,7 +94,7 @@ A total of 18 studies were included in our review, a summary of the studies is s
 
 \bibliography{references,references2}
 %\end{multicols*}
-
-
-
+\clearpage
+\appendix
+\input{tex/appendix.tex}
 \end{document}

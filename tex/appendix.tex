@@ -1,0 +1,71 @@
+
+\newgeometry{hmargin=0.2cm, vmargin=2cm} % Decrease hmargin to make the table fit.
+\setcounter{table}{0} % Reset counter of the tables
+\renewcommand{\thetable}{A\arabic{table}} % new counter format for appendix
+
+
+\topcaption{Log of Search Queries} \label{tab:log}
+\tablefirsthead{\toprule}
+
+% the contents of each repeating tabular head. 
+\tablehead{\multicolumn{2}{l}{Table \ref{tab:log}}{continued from previous page}\\
+        \toprule
+            Database & Search String & Retrieved records & Remarks  \\
+        \midrule}
+% Tabular head of last page of the table 
+\tablelasthead{\multicolumn{2}{l}{Table \ref{tab:log}} concluded from previous page\\
+        \toprule
+            Database & Search String & Retrieved records & Remarks  \\       
+        \midrule}
+\tabletail{\hline\multicolumn{4}{r}{{Continued on next page}} \\ \bottomrule}
+
+\begin{table}[H]
+%\begin{adjustwidth}{-2cm}{-2cm}% adjust the L and R margins by 1 inch
+%\centering % if you want to center the table
+\begin{xtabular}{p{21mm}p{120mm}p{18mm}p{30mm}}
+      \toprule
+      Database & Search String & Retrieved (Baseline) & Remarks  \\
+      \midrule
+      Scopus 
+      & TITLE("Attention aware systems: Theories, applications, and research agenda"
+      OR "Exploring Eye-Tracking Data for Detection of Mind-Wandering on Web Tasks"
+      OR "Face forward: Detecting mind wandering from video during narrative film comprehension"
+      OR "Toward fully automated person-independent detection of mind wandering"
+      OR "Scalable mind-wandering detection for MOOCs: A webcam-based approach"
+      OR "Automatic gaze-based user-independent detection of mind wandering during computerized reading"
+      OR "Automatic gaze-based detection of mind wandering with metacognitive awareness"
+      OR "Automatic detection of mind wandering during reading using gaze and physiology"
+      OR "Out of the Fr-Eye-ing Pan: Towards gaze-based models of attention during learning with technology in the classroom"
+      & 10 (10)
+      & Baseline 
+      \\ \midrule
+      Web of Science
+      & TI=("Attention aware systems: Theories, applications, and research agenda" OR "Exploring Eye-Tracking Data for Detection of Mind-Wandering on Web Tasks" OR "Face forward: Detecting mind wandering from video during narrative film comprehension" OR "Toward fully automated person-independent detection of mind wandering" OR "Scalable mind-wandering detection for MOOCs: A webcam-based approach" OR "Automatic gaze-based user-independent detection of mind wandering during computerized reading" OR "Automatic gaze-based detection of mind wandering with metacognitive awareness" OR "Automatic detection of mind wandering during reading using gaze and physiology" OR "Out of the Fr-Eye-ing Pan: Towards gaze-based models of attention during learning with technology in the classroom" OR “Automated detection of mind wandering: A mobile application“)
+      & 6 (6)
+      & This count is lower because Web of Science is very strict in terms of acceptance, so some of the papers we identified as relevant are not on the site
+      \\ \midrule
+      Scopus 
+      & TITLE-ABS-KEY ( ( "mind wandering"  OR  "zoning out"  OR  "attention loss"  OR  "Task unrelated thought" )  AND  ( ( "attentional state estimation"  OR  "State models"  OR  "attention tracking"  OR  "user modeling" )  OR  ( "attention aware interfaces"  OR  "attentive user interfaces"  OR  "smart environment" )))
+      & 12 (5)
+      & This query gave too few results due to the small amount of keywords, but most of them seem relevant, which indicates that the keywords used are good.
+      \\ \midrule
+      Web of Science
+      & TS=("Mind wandering" OR "Zoning out" OR "Attention loss" OR "Task unrelated thought" OR "Mindless reading") AND TS=( "Attentional state estimation" OR "State models" OR "Attention tracking" OR "Eye-tracking" OR "Pupillometry" OR "Gaze tracking" OR "Gaze registration" OR "User modeling" OR "user modeling" OR "Affect detection" OR "Attention" OR "Learning analytics" OR "Attention aware interfaces" OR "Attentive user interfaces" OR "Smart environment" OR "Attention aware systems" OR "Controlling Human Attention" OR "MOOCs" OR "Adaptive systems" OR "Notification systems" OR "Intelligent tutoring systems" OR "Attention-aware learning") and WC = ("COMPUTER SCIENCE CYBERNETICS" OR "COMPUTER SCIENCE INFORMATION SYSTEMS" OR "COMPUTER SCIENCE SOFTWARE ENGINEERING" OR "COMPUTER SCIENCE ARTIFICIAL INTELLIGENCE" OR "COMPUTER SCIENCE INTERDISCIPLINARY APPLICATIONS" OR "COMPUTER SCIENCE THEORY METHODS")
+      & 23 (5)
+      & 
+      Considering that the database is somewhat stricter the result is reasonably good.
+      \\ \midrule
+      Scopus
+      & TITLE-ABS-KEY ( ( "Mind wandering"  OR  "Zoning out"  OR  "Attention loss"  OR  "Task unrelated thought"  OR  "Mindless reading" )  AND  ( ( "Attentional state estimation"  OR  "State models"  OR  (Attention AND Tracking) OR ((Automated OR Automatic) AND detection) OR "Eye-tracking"  OR  "Pupillometry"  OR  "Gaze tracking"  OR Gaze OR  "Gaze registration"  OR  "User modeling" OR  "Affect detection"  OR  "Attention"  OR  "Learning analytics" )  OR  ( "Attention aware interfaces"  OR  "Attentive user interfaces"  OR  "Smart environment"  OR  "Attention aware systems"  OR  "Controlling Human Attention"  OR  "MOOCs"  OR  "Adaptive systems"  OR  "Notification systems"  OR  "Intelligent tutoring systems"  OR  "Attention-aware learning" ) ) ) AND  ( LIMIT-TO ( SUBJAREA ,  "COMP" )  OR  LIMIT-TO ( SUBJAREA ,  "ENGI" ) )
+      & 74 (9)
+      & This search query gave us a good amount of results, but we only recognised about half of those as relevant, most likely because of the large amount of keywords used with OR operators.
+      \\     
+      \bottomrule
+\end{xtabular}
+%\end{adjustwidth}
+\end{table}
+
+%	\caption{Log of search queries used}
+%      \label{tab:log}
+
+\restoregeometry % restore normal page margins
