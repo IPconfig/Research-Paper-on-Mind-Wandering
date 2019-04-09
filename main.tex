@@ -2,13 +2,14 @@
 \usepackage[british]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{csquotes} % needed for babel
-\usepackage{etoolbox} % rewrite default commands 
+\usepackage{etoolbox} % alter default commands
 \usepackage{url}
 \bibliographystyle{IEEEtran.bst}
 \usepackage{rotating}
 \usepackage{makecell}
 \usepackage{adjustbox}
 \usepackage{tabularx}
+\usepackage{array}
 \usepackage{lmodern}
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -17,7 +18,7 @@
 \usepackage{wrapfig} % Wrap figure around text
 \usepackage{tikz} % Draw shapes
 \usetikzlibrary{positioning,chains}
-\usepackage{float} % Correct the positioning of images
+\usepackage{float}% Correcting the positioning of images
 
 % Table preamble
 \usepackage{geometry}
@@ -62,8 +63,9 @@ Delft, Netherlands\\
 \input{./tex/methodology}
 
 \section{Results \& Discussion}
-A total of 18 studies were included in our review, a summary of the studies is shown in Table \ref{tab:data}. For each study the following was defined: the task people had to perform, the modalities used, the extracted features, used equipment, how people reported MW, used machine learning (ML) algorithms and the performance of the developed classifier. In the following sections, the contents and relevance of the columns from Table \ref{tab:data} will be discussed.
-\input{./img/table.tex}
+A total of 18 studies were included in our review, a summary of the studies is shown in Table \ref{tab:data}. For each study the following was defined: the task people had to perform, the modalities used, the extracted features, used sensors, how people reported MW, used machine learning (ML) algorithms and the performance of the developed classifier. In the following sections, the contents and relevance of the columns from Table \ref{tab:data} will be discussed.
+
+\input{./img/table}
 
 \subsection{Performed tasks} \label{sec:tasks}
 \input{tex/tasks.tex}
@@ -71,7 +73,7 @@ A total of 18 studies were included in our review, a summary of the studies is s
 \subsection{Modalities recorded and features extracted} \label{sec:modal}
 \input{tex/modalities.tex}
 
-\subsection{Equipment used} \label{sec:equipment}
+\subsection{Sensors used} \label{sec:equipment}
 \input{tex/equipment.tex}
 
 \subsection{Reporting MW} \label{sec:reporting}
@@ -87,8 +89,10 @@ A total of 18 studies were included in our review, a summary of the studies is s
 \input{tex/conclusion.tex}
 
 \bibliography{references,references2}
-%\end{multicols*}
+
+
 \clearpage
 \appendix
 \input{tex/appendixA.tex}
+
 \end{document}
