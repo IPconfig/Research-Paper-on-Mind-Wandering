@@ -17,18 +17,18 @@ every join/.style = arrow,
 % the title
 %\node[above=of tc,font=\bfseries] {PRISMA 2009 Flow Diagram};
 % the nodes at the top
-\node (n1a) [mynode, left=of tc, xshift=7mm]    {Records identified through
+\node (n1a) [mynode, left=of tc, xshift=7mm]    {Studies identified through
                                         database searching\\
                                         (N = 125)};
-\node (n1b) [mynode,right=of tc, xshift=-7mm]    {Additional records indentified\\
+\node (n1b) [mynode,right=of tc, xshift=-7mm]    {Additional Studies indentified\\
                                         through other sources\\
                                         (N = 10)};
     % the chain in the center
-\node (n2)  [mynode, below=of tc]   {Records after duplicates removed\\
+\node (n2)  [mynode, below=of tc]   {Studies after duplicates removed\\
                                         (N = 72)};
-\node (n3)  [mynode,join]   {Records screened on title\\
+\node (n3)  [mynode,join]   {Studies screened on title\\
                                 (N = 72)};
-\node (n4)  [mynode,join]   {Records screened on abstract\\
+\node (n4)  [mynode,join]   {Studies screened on abstract\\
                                 (N = 31)};
 \node (n5)  [mynode,join]   {Full-text accessed for eligibility\\
                                 (N = 23)};
@@ -37,18 +37,18 @@ every join/.style = arrow,
 % \node (n7)  [mynode,join]   {\# of studies included in quantitative sysntesis\\
 %                                (meta-analysis)};
 % the branches to the right
-\node (n3r) [mynode,right=of n3]    {Records excluded:\\
+\node (n3r) [mynode,right=of n3]    {Studies excluded:\\
                                         20: Not related to MW\\
                                         15: Related to impact of MW\\
                                         6: Related to attention guidance
                                         };
-\node (n4r) [mynode,right=of n4]    {Records excluded:\\
+\node (n4r) [mynode,right=of n4]    {Studies excluded:\\
                                     2: Not related MW\\
                                     4: Related to impact of MW\\
                                     2: Related to attention guidance
                                     
                                         };
-\node (n5r) [mynode,right=of n5]    {Records excluded:\\
+\node (n5r) [mynode,right=of n5]    {Studies excluded:\\
                                         2: Exclusive use of manual detection of MW\\
                                         2: Overview of the subject\\
                                         1: No focus on detection of MW};
