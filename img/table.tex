@@ -1,4 +1,4 @@
-\newgeometry{hmargin=0cm,vmargin=1.1cm,landscape}
+\newgeometry{hmargin=1.1cm,vmargin=1.0cm,landscape}
 \onecolumn % use the full width of the page
 % header and footer information
 \topcaption{Detection methods for mind wandering} \label{tab:data}
@@ -18,7 +18,7 @@
 % Start of Table
 \begin{ThreePartTable}
 \small % change font size to small. If not used change column size performance  24 -> 27mm and notes 46 -> 43
-        \begin{xtabular}{P{20mm}P{28mm}P{26mm}P{30mm}P{29mm}P{23mm}P{33mm}P{24mm}P{46mm}}
+        \begin{xtabular}{P{20mm}P{24mm}P{24mm}P{28mm}P{28mm}P{21mm}P{26mm}P{24mm}P{42mm}}
                 \toprule
                 Reference & Task & Modalities used & Sensors Used & Features Extracted \footnotemark[1] & Reporting MW \footnotemark[2] & ML algorithm(s) & Performance & Notes\\
                 \midrule
@@ -38,8 +38,8 @@
                 Cheetham et al. (2016) \cite{Cheetham2016AutomatedApplication} & Eyes-closed FA meditation & Biosignals & Biosensors & Respiration, heart rate, electrocardiogram, electromyogram, electrodermal acitivity & SCR & N/A & Accuracy of 85\% & Performance achieved for area under the receiver operator characteristic curve\\ \midrule
                 Da Silva et al. (2018) \cite{DaSilva2018WanderingWandering} & Maintain access to memory items (letters) while completing math equations & Mouse movements & Computer mouse & Time to press start, initiation time, total distance, average speed, speed errors & Probes after each set & N/A & N/A & Provides initial evidence that mouse tracking can be used to predict MW\\ \midrule
                 Gontier (2016) \cite{Gontier2016HowEnvironment} & Various extra-vehicular activities at the Mars Desert Research Station & Heart rate & ECG sensor & Measures of heart rate variability & AP & N/A & N/A & This study was only done with 1 participant, so did not mention much in terms of relevant results \\ \midrule
-                Mishchenko et al. (2015) \cite{Mishchenko2015DetectingTespiti} & Controlling a passenger train in a train simulator program & Electroencephalo\-graphic brain activity & Modified EPOC EEG device & Feature vector containing 252 EEG spectral power values & AP & Several SVM classifiers & Accuracy of 90\% & Accuracy is cross-validation accuracy \\ \midrule
-                Russell et al. (2016) \cite{Russell2016MonitoringEnvironments} & Watching flickers on a computer screen & Electroencephalo\-graphic brain activity & Electroencephalo\-gram & ssVEP powers & N/A & N/A & N/A & An indication that high frequency ssVEPs are attention sensitive is given, due to unexpected results further research is needed\\ \midrule
+                Mishchenko et al. (2015) \cite{Mishchenko2015DetectingTespiti} & Controlling a passenger train in a train simulator program & Electroence\-phalo\-graphic brain activity & Modified EPOC EEG device & Feature vector containing 252 EEG spectral power values & AP & Several SVM classifiers & Accuracy of 90\% & Accuracy is cross-validation accuracy \\ \midrule
+                Russell et al. (2016) \cite{Russell2016MonitoringEnvironments} & Watching flickers on a computer screen & Electroence\-phalo\-graphic brain activity & Electroence\-phalo\-gram & ssVEP powers & N/A & N/A & N/A & An indication that high frequency ssVEPs are attention sensitive is given, due to unexpected results further research is needed\\ \midrule
                 \bottomrule
         \end{xtabular}
         % Add Footnotes
