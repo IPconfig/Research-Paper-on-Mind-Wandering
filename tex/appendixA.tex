@@ -1,9 +1,12 @@
 \setcounter{table}{0} % Reset counter of the tables
 \renewcommand{\thetable}{A\arabic{table}} % new counter format for appendix
 
+
 \begin{table}[H] % overwrite default float of LaTeX
-\begin{adjustwidth}{-3cm}{-3cm}% adjust the L and R margins
-      \begin{tabular}{p{21mm}p{120mm}p{18mm}p{30mm}}
+
+\begin{adjustwidth}{-1.3cm}{-1.3cm}% adjust the L and R margins
+
+      \begin{tabular}{P{12mm}|P{106mm}|P{12mm}|P{26mm}}
             \toprule
             Database & Search String & Retrieved (Baseline) & Remarks  \\
             \midrule
@@ -22,7 +25,7 @@
             \\ \midrule
             Web of Science
             & TI=("Attention aware systems: Theories, applications, and research agenda" OR "Exploring Eye-Tracking Data for Detection of Mind-Wandering on Web Tasks" OR "Face forward: Detecting mind wandering from video during narrative film comprehension" OR "Toward fully automated person-independent detection of mind wandering" OR "Scalable mind-wandering detection for MOOCs: A webcam-based approach" OR "Automatic gaze-based user-independent detection of mind wandering during computerized reading" OR "Automatic gaze-based detection of mind wandering with metacognitive awareness" OR "Automatic detection of mind wandering during reading using gaze and physiology" OR "Out of the Fr-Eye-ing Pan: Towards gaze-based models of attention during learning with technology in the classroom" OR “Automated detection of mind wandering: A mobile application“)
-            & 6 (6/10)
+            & 6 \newline (6/10)
             & This count is lower because Web of Science is very strict in terms of acceptance, so some of the papers we identified as relevant are not on the site
             \\ \midrule
             Scopus 
